@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> | Task Manager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <p class="tag">TASK DETAILS</p>
+            <h1><%= title %></h1>
+            <p class="subtitle">
+                Complete details of your task
+            </p>
+        </header>
+
+        <section class="create-section">
+
+            <h2>Description</h2>
+
+            <p class="task-description">
+                <%= content %>
+            </p>
+
+            <a class="back-link" href="/">
+                ← Back to Tasks
+            </a>
+
+        </section>
+
+    </div>
+
+</body>
+</html>

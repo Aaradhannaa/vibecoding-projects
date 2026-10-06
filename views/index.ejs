@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <p class="tag">MY WORKSPACE</p>
+            <h1>Task Manager</h1>
+            <p class="subtitle">
+                Create, organize and manage your tasks easily.
+            </p>
+        </header>
+
+        <section class="create-section">
+
+            <h2>Create a New Task</h2>
+
+            <form action="/create" method="POST">
+
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Task title"
+                    required
+                >
+
+                <textarea
+                    name="description"
+                    placeholder="Write your task details here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    + Create Task
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="tasks-section">
+
+            <div class="tasks-heading">
+                <div>
+                    <p class="tag">YOUR WORK</p>
+                    <h2>My Tasks</h2>
+                </div>
+
+                <span class="task-count">
+                    <%= tasks.length %> tasks
+                </span>
+            </div>
+
+            <div class="task-container">
+
+                <% tasks.forEach(task => { %>
+
+                    <div class="task-card">
+
+                        <div class="task-icon">✓</div>
+
+                        <h3>
+                            <%= task.replace(".txt", "") %>
+                        </h3>
+
+                        <p>
+                            View the complete details of this task.
+                        </p>
+
+                        <a href="/task/<%= task %>">
+                            Read More →
+                        </a>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
